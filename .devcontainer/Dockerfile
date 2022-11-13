@@ -25,3 +25,7 @@ RUN . $NVM_DIR/nvm.sh \
     && nvm alias default node \
     && nvm use node \
     && npm i -g npm@latest
+
+# Configure GIT
+RUN git config --global core.editor "vim"
+RUN git config --global pull.rebase false
