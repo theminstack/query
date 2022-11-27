@@ -1,6 +1,6 @@
 {
-  "name": "react-micro-query",
-  "description": "Bare bones query and mutation hooks for React.",
+  "name": "@minstack/query",
+  "description": "Minimal query and mutation hooks for React.",
   "author": {
     "name": "Chris Ackerman",
     "email": "chris@topher.land"

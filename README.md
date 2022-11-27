@@ -1,6 +1,6 @@
-# React Micro-Query
+# @minstack/query
 
-Bare bones [query](#query) and [mutation](#mutation) hooks for React.
+Minimal [query](#query) and [mutation](#mutation) hooks for React.
 
 Inspired by (and API compatible with) React Query's [useQuery](https://tanstack.com/query/v4/docs/reference/useQuery) and [useMutation](https://tanstack.com/query/v4/docs/reference/useMutation) hooks.
 
@@ -13,7 +13,7 @@ Inspired by (and API compatible with) React Query's [useQuery](https://tanstack.
 
 - Cache or support [SWR](https://www.toptal.com/react-hooks/stale-while-revalidate).
 - Retry failed requests.
-- Use a `<QueryClientProvider>` 
+- Require a `<QueryClientProvider>` 
 
 By removing caching and retries, the API is simplified, the library size is reduced, there is no need for a `<QueryClientProvider>` wrapper to provide a shared `QueryClient`. There are other solutions and libraries with caching and retrying as their core capability, which can be composed with this library. [Small is beautiful, and each library does one thing well.](https://opensource.com/business/15/2/how-linux-philosophy-affects-you)
 
@@ -42,6 +42,8 @@ This hook is suitable for [safe](https://developer.mozilla.org/en-US/docs/Glossa
 The `useQuery` hook can be used directly in components, but generally you should wrap it in a custom hook.
 
 ```tsx
+import { useQuery } from '@minstack/query';
+
 const useResource = (id: string): QueryResult<Resource> => {
   const result = useQuery(
     // Query is refetched when the query key (serializable) changes.
@@ -108,6 +110,8 @@ This hook is suitable for operations which may be [unsafe](https://developer.moz
 The `useMutation` hook can be used directly in components, but generally you should wrap it in a custom hook.
 
 ```tsx
+import { useMutation } from '@minstack/query';
+
 const useCreateResource = (): MutationResult<Resource> => {
   const result = useMutation(
     async (resource: Resource): Resource => {
