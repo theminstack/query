@@ -1,4 +1,4 @@
-# @minstack/query
+# MinStack Query
 
 Minimal [query](#query) and [mutation](#mutation) hooks for React.
 
